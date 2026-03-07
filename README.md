@@ -27,6 +27,25 @@ cd screenshot && bash scripts/install.sh
 
 See [screenshot/README.md](./screenshot/README.md) for details.
 
+### [browser](./browser/)
+
+Give Claude Code eyes in a real browser via Chrome DevTools Protocol. No MCP server, no npm — just `curl` and `python3`.
+
+**How it works:**
+- Launches Chrome Canary with an isolated bot profile (`~/.chromium-bot`)
+- Connects via CDP on `localhost:9222`
+- Lists tabs, opens URLs, reads page content
+- Your main Chrome is never touched
+
+**Quick install:**
+```bash
+brew install --cask google-chrome-canary
+pip3 install websockets
+cp browser/SKILL.md ~/.claude/skills/browser/SKILL.md
+```
+
+See [browser/README.md](./browser/README.md) for details.
+
 ## Hooks & Automation
 
 ### [github-issues-memory](./github-issues-memory/)
