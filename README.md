@@ -46,6 +46,25 @@ cp browser/SKILL.md ~/.claude/skills/browser/SKILL.md
 
 See [browser/README.md](./browser/README.md) for details.
 
+### [analyze-patterns](./analyze-patterns/)
+
+Analyze your Claude Code session transcripts to find repeating behavioral patterns — corrections, frequent tools, abandoned tasks, and places where Claude resists your intent.
+
+**How it works:**
+- A Python script extracts user messages from `~/.claude/projects/*.jsonl`
+- Claude analyzes them for 4 pattern types (repeated corrections, frequent tools, abandoned tasks, Claude resistance)
+- Shows evidence quotes and suggests concrete actions (rules, shortcuts, issues)
+- Optionally creates GitHub Issues for each pattern found
+
+**Quick install:**
+```bash
+mkdir -p ~/.claude/skills/analyze-patterns/scripts
+cp analyze-patterns/SKILL.md ~/.claude/skills/analyze-patterns/SKILL.md
+cp analyze-patterns/scripts/pattern-detector.py ~/.claude/skills/analyze-patterns/scripts/
+```
+
+See [analyze-patterns/README.md](./analyze-patterns/README.md) for details.
+
 ## Hooks & Automation
 
 ### [github-issues-memory](./github-issues-memory/)

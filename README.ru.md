@@ -21,6 +21,25 @@ cd screenshot && bash scripts/install.sh
 
 Подробнее в [screenshot/README.md](./screenshot/README.md).
 
+### [analyze-patterns](./analyze-patterns/)
+
+Анализ транскриптов сессий Claude Code — находит повторяющиеся паттерны поведения: коррекции, частые инструменты, брошенные задачи и случаи, когда Claude сопротивляется инструкциям.
+
+**Как работает:**
+- Python-скрипт извлекает сообщения пользователя из `~/.claude/projects/*.jsonl`
+- Claude анализирует их на 4 типа паттернов
+- Показывает цитаты-доказательства и предлагает конкретные действия
+- Опционально создаёт GitHub Issues для каждого найденного паттерна
+
+**Быстрая установка:**
+```bash
+mkdir -p ~/.claude/skills/analyze-patterns/scripts
+cp analyze-patterns/SKILL.md ~/.claude/skills/analyze-patterns/SKILL.md
+cp analyze-patterns/scripts/pattern-detector.py ~/.claude/skills/analyze-patterns/scripts/
+```
+
+Подробнее в [analyze-patterns/README.md](./analyze-patterns/README.md).
+
 ### [remote-control](./remote-control/)
 
 Подключайся к терминальной сессии Claude Code с телефона или любого устройства. Запусти задачу на ноутбуке — продолжи с дивана.
